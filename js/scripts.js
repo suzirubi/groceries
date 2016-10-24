@@ -1,6 +1,6 @@
 $(document).ready(function(){
   $("form#grocery-list").submit(function(event){
-
+    $("ul").text("");
     var items = ["item1", "item2", "item3", "item4"];
     var groceryList = [];
 
@@ -8,6 +8,7 @@ $(document).ready(function(){
       var userInput = $("input#" + item).val();
       groceryList.push(userInput.toUpperCase());
       groceryList.sort();
+
       //var addFood = groceryList.shift();
       //$("." + item).text(addFood);
     });
@@ -15,7 +16,7 @@ $(document).ready(function(){
     groceryList.forEach(function(grocery){
         $("ul").append("<li>" + grocery + "</li>");
     });
-    $("form#grocery-list").hide();
+    //$("form#grocery-list").hide();
     event.preventDefault();
   });
 });
