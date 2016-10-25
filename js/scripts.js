@@ -1,18 +1,23 @@
 $(document).ready(function(){
   $("form#grocery-list").submit(function(event){
+
     $("ul").text("");
 
-    var items = [];
-    // var groceryList = [];
+    var  item1 = $("input#item1").val();
+    var  item2 = $("input#item2").val();
+    var  item3 = $("input#item3").val();
+    var  item4 = $("input#item4").val();
+    var items = [item1, item2, item3, item4];
+    var groceryList = [];
 
-    for (var item = 0; item < items.length; item += 1) {
-      var  item1 = $("input#item1").val();
-      var  item2 = $("input#item2").val();
-      var  item3 = $("input#item3").val();
-      var  item4 = $("input#item4").val();
-      items.push(item);
-      console.log(items);
+    for ( var count = 0; count < items.length; count += 1) {
+
+    groceryList.push(items[count]);
+
     }
+
+    $("#display").text(groceryList);
+
 
 
     // items.forEach(function(item){
